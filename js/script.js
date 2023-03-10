@@ -16,7 +16,6 @@ let tasksTwo = [];
 
 let tasksThree = [];
 
-// if()
 const getStorage = function () {
   const retrive1 = JSON.parse(localStorage.getItem("listOne"));
   const retrive2 = JSON.parse(localStorage.getItem("listTwo"));
