@@ -128,8 +128,6 @@ const updateTask = function (id, text, progress) {
   createTask(progress);
 };
 
-const changePosition = function () {};
-
 // - UI Interface
 const AddTask = function (progress) {
   let newTask = {
@@ -232,6 +230,38 @@ const dragAndDrop = function () {
       afterEl.after(taskEl);
     });
   });
+
+  // ---------------- Mobile
+  document.addEventListener("touchstart", (e) => {
+    if (e.target.parentElement.classList.contains("task-flex")) {
+      console.log(e);
+      e.target.parentElement.classList.add("drag");
+
+      // if (e.target.parentElement.getAttribute("data-ID") == null) return;
+
+      // e.target.dataTransfer.setData(
+      //   "text/plain",
+      //   e.target.parentElement.getAttribute("data-ID")
+      // );
+    }
+  });
+
+  document.addEventListener("touchend", (e) => {
+    if (e.target.parentElement.classList.contains("task-flex")) {
+      e.target.parentElement.classList.remove("drag");
+    }
+  });
+
+  document.addEventListener("touchmove", (e) => {
+    // e.preventDefault();
+    if (e.target.parentElement.classList.contains("task-flex")) {
+      e.target.parentElement.classList.add("drag");
+
+      // if()
+    }
+  });
+
+  /////////////////////////////////////////////
 };
 dragAndDrop();
 
