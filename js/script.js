@@ -192,7 +192,8 @@ const dragAndDrop = function () {
     emptyEl.addEventListener("drop", (e) => {
       emptyEl.classList.remove("draggable");
 
-      const contTasks = emptyEl.closest(".cont-tasks");
+      let contTasks = emptyEl.closest(".cont-tasks");
+
       const emptyArr = [...contTasks.querySelectorAll(".empty")];
       const emptyIndex = emptyArr.indexOf(emptyEl);
 
@@ -230,38 +231,6 @@ const dragAndDrop = function () {
       afterEl.after(taskEl);
     });
   });
-
-  // ---------------- Mobile
-  document.addEventListener("touchstart", (e) => {
-    if (e.target.parentElement.classList.contains("task-flex")) {
-      console.log(e);
-      e.target.parentElement.classList.add("drag");
-
-      // if (e.target.parentElement.getAttribute("data-ID") == null) return;
-
-      // e.target.dataTransfer.setData(
-      //   "text/plain",
-      //   e.target.parentElement.getAttribute("data-ID")
-      // );
-    }
-  });
-
-  document.addEventListener("touchend", (e) => {
-    if (e.target.parentElement.classList.contains("task-flex")) {
-      e.target.parentElement.classList.remove("drag");
-    }
-  });
-
-  document.addEventListener("touchmove", (e) => {
-    // e.preventDefault();
-    if (e.target.parentElement.classList.contains("task-flex")) {
-      e.target.parentElement.classList.add("drag");
-
-      // if()
-    }
-  });
-
-  /////////////////////////////////////////////
 };
 dragAndDrop();
 
