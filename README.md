@@ -1,10 +1,10 @@
 # kanban-board [Live Demo](https://youssef-mhmoud.github.io/kanban-board/)
 
 ## In this project you can:
-1. Add new task.
-2. Edit a task.
-3. Remove a task.
-4. Drag a task.
+* Add new task.
+* Edit a task.
+* Remove a task.
+* Drag a task.
 
 ---
 
